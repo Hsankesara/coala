@@ -27,7 +27,7 @@ class BuildManPage(Command):
     You can then use the following setup command to produce a man page::
 
         $ python setup.py build_manpage --output=coala.1 \
-            --parser=coalib.parsing.DefaultArgParser:default_arg_parser
+            --parser=coalib.parsing.Defaultargparse.ArgumentParser:default_arg_parser
 
     If automatically want to build the man page every time you invoke
     your build, add to your ``setup.cfg`` the following::
@@ -40,7 +40,7 @@ class BuildManPage(Command):
         ('output=', 'O', 'output file'),
         ('parser=', None, 'module path to an ArgumentParser instance'
          '(e.g. mymod:func, where func is a method or function which return'
-         'an arparse.ArgumentParser instance.'),
+         'an argparse.ArgumentParser instance.'),
     ]
 
     def initialize_options(self):

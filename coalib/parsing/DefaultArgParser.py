@@ -23,7 +23,7 @@ class CustomFormatter(argparse.RawDescriptionHelpFormatter):
 
 def default_arg_parser(formatter_class=None):
     """
-    This function creates an ArgParser to parse command line arguments.
+    This function creates an argparse.ArgumentParser to parse command line arguments.
 
     :param formatter_class: Formatting the arg_parser output into a specific
                             form. For example: In the manpage format.
