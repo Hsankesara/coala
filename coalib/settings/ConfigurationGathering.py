@@ -320,7 +320,8 @@ def get_filtered_bears(languages, log_printer, arg_parser=None):
 
     :param languages:   List of languages.
     :param log_printer: The log_printer to handle logging.
-    :param arg_parser:  An ``argparse.ArgumentParser`` object.
+    :param arg_parser:  An ``argparse.ArgumentParser`` 
+			object.
     :return:            Tuple containing dictionaries of local bears
                         and global bears.
     """
@@ -367,8 +368,8 @@ def gather_configuration(acquire_settings,
     :param log_printer:      The log printer to use for logging. The log level
                              will be adjusted to the one given by the section.
     :param arg_list:         CLI args to use
-    :param arg_parser:       Instance of argparse.ArgumentParser that is used to parse
-                             none-setting arguments.
+    :param arg_parser:       Instance of ``argparse.ArgumentParser`` that 
+			     is used to none-setting arguments.
     :return:                 A tuple with the following contents:
 
                              -  A dictionary with the sections
