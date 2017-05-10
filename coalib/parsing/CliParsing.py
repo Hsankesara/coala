@@ -22,7 +22,7 @@ def parse_cli(arg_list=None,
     :param origin:                      Directory used to interpret relative
                                         paths given as argument.
     :param arg_parser:                  Instance of ``argparse.ArgumentParser``
-					that is used to
+                                        that is used to
                                         parse none-setting arguments.
     :param key_value_delimiters:        Delimiters to separate key and value
                                         in setting arguments where settings are

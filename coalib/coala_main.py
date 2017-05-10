@@ -1,8 +1,7 @@
 import os
 import platform
 
-from pyprint.ConsolePrinter impor	t ConsolePrinter
-
+from pyprint.ConsolePrinter import ConsolePrinter
 from coalib import VERSION
 from coalib.misc.Exceptions import get_exitcode
 from coalib.output.Interactions import fail_acquire_settings
@@ -58,7 +57,7 @@ def run_coala(console_printer=None,
     :param force_show_patch:        If set to True, a patch will be always
                                     shown. (Using ApplyPatchAction.)
     :param arg_parser:              Instance of ``argparse.ArgumentParser``
-				    that is used to parse
+                                    that is used to parse
                                     non-setting arguments.
     :param arg_list:                The CLI argument list.
     :return:                        A dictionary containing a list of results
