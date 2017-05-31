@@ -136,18 +136,22 @@ def warn_config_absent(sections, argument, log_printer):
     return False
 
 
-def load_configuration(arg_list, log_printer, arg_parser=None):
+def load_configuration(arg_list, log_printer, arg_parser=None, args=None):
     """
     Parses the CLI args and loads the config file accordingly, taking
     default_coafile and the users .coarc into account.
 
-    :param arg_list:    The list of command line arguments.
+    :param arg_list:    The list of CLI arguments.
     :param log_printer: The LogPrinter object for logging.
+    :param arg_parser:  An ``argparse.ArgumentParser`` instance used for
+                        parsing the CLI arguments.
+    :param arg_list:    Alternative pre-parsed CLI arguments.
     :return:            A tuple holding (log_printer: LogPrinter, sections:
                         dict(str, Section), targets: list(str)). (Types
                         indicated after colon.)
     """
-    cli_sections = parse_cli(arg_list=arg_list, arg_parser=arg_parser)
+    cli_sections = parse_cli(arg_list=arg_list, arg_parser=arg_parser,
+                             args=args)
     check_conflicts(cli_sections)
 
     if (
@@ -341,7 +345,8 @@ def get_filtered_bears(languages, log_printer, arg_parser=None):
 def gather_configuration(acquire_settings,
                          log_printer,
                          arg_list=None,
-                         arg_parser=None):
+                         arg_parser=None,
+                         args=None):
     """
     Loads all configuration files, retrieves bears and all needed
     settings, saves back if needed and warns about non-existent targets.
@@ -368,8 +373,14 @@ def gather_configuration(acquire_settings,
     :param log_printer:      The log printer to use for logging. The log level
                              will be adjusted to the one given by the section.
     :param arg_list:         CLI args to use
+<<<<<<< HEAD
     :param arg_parser:       Instance of ``argparse.ArgumentParser``
                              is used to none-setting arguments.
+=======
+    :param arg_parser:       Instance of ArgParser that is used to parse
+                             none-setting arguments.
+    :param args:             Alernative pre-parsed CLI arguments.
+>>>>>>> efa6727f61f7aa07b4cf38e4ddb34318a978bb62
     :return:                 A tuple with the following contents:
 
                              -  A dictionary with the sections
@@ -379,10 +390,12 @@ def gather_configuration(acquire_settings,
                                 section
                              -  The targets list
     """
-    # Note: arg_list can also be []. Hence we cannot use
-    # `arg_list = arg_list or default_list`
-    arg_list = sys.argv[1:] if arg_list is None else arg_list
-    sections, targets = load_configuration(arg_list, log_printer, arg_parser)
+    if args is None:
+        # Note: arg_list can also be []. Hence we cannot use
+        # `arg_list = arg_list or default_list`
+        arg_list = sys.argv[1:] if arg_list is None else arg_list
+    sections, targets = load_configuration(arg_list, log_printer, arg_parser,
+                                           args=args)
     local_bears, global_bears = fill_settings(sections,
                                               acquire_settings,
                                               log_printer)
