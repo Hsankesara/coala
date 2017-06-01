@@ -141,8 +141,12 @@ Try executing it:
 
 Hey, we'll get asked for the user\_input! Wasn't that easy? Go ahead,
 enter something and observe the output.
+<<<<<<< HEAD
 After doing that you'll see an interective output. :
 
+=======
+After doing that you'll see an interective output:
+>>>>>>> 4945ff39c1c66f569172aae11895c9dd420ec88d
 .. output::
 
     [DEBUG][22:40:01] Platform Linux -- Python 3.4.2, coalib 0.12.0.dev20170507091731
@@ -162,7 +166,10 @@ After doing that you'll see an interective output. :
     |    |  1: Open file(s)
     |    |  2: Add ignore comment
     |    | Enter number (Ctrl-D to exit):
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4945ff39c1c66f569172aae11895c9dd420ec88d
 Here you can select option according to you requirement.
 
 So, what did coala do here?
