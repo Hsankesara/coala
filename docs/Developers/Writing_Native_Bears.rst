@@ -110,7 +110,7 @@ Let's say:
 So let's extend our HelloWorldBear a bit, I've named the new bear with
 the creative name CommunicationBear:
 
-.. code:: python
+.. output::
 
     from coalib.bears.LocalBear import LocalBear
 
