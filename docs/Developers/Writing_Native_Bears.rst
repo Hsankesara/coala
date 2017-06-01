@@ -66,8 +66,9 @@ In order to let coala execute this bear you need to let coala know where
 to find it. We can do that with the ``-d`` (``--bear-dirs``) argument:
 
 ``coala -f src/*.c -d bears -b HelloWorldBear -L DEBUG --flush-cache``
-After exicuting above command following output would appears :
-.. code:: python
+After exicuting above command following output would appears.
+
+.. output::
 
     [WARNING][22:28:38] 'cli' is an internally reserved section name.
     It may have been generated into your coafile while running coala with `--save`.
@@ -141,7 +142,7 @@ Try executing it:
 Hey, we'll get asked for the user\_input! Wasn't that easy? Go ahead,
 enter something and observe the output.
 After doing that you'll see an interective output:
-.. code:: python
+.. output::
 
     [DEBUG][22:40:01] Platform Linux -- Python 3.4.2, coalib 0.12.0.dev20170507091731
     [DEBUG][22:40:01] The file cache was successfully flushed.
@@ -161,6 +162,7 @@ After doing that you'll see an interective output:
     |    |  2: Add ignore comment
     |    | Enter number (Ctrl-D to exit):
 Here you can select option according to you requirement.
+
 So, what did coala do here?
 
 First, coala looked at the parameters of the run method and found that
