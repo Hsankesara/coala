@@ -67,7 +67,7 @@ to find it. We can do that with the ``-d`` (``--bear-dirs``) argument:
 
 ``coala -f src/*.c -d bears -b HelloWorldBear -L DEBUG --flush-cache``
 After exicuting above command following output would appears :
-.. Output:: python
+.. code:: python
 
     [WARNING][22:28:38] 'cli' is an internally reserved section name.
     It may have been generated into your coafile while running coala with `--save`.
@@ -141,7 +141,7 @@ Try executing it:
 Hey, we'll get asked for the user\_input! Wasn't that easy? Go ahead,
 enter something and observe the output.
 After doing that you'll see an interective output:
-.. Output :: python
+.. code:: python
 
     [DEBUG][22:40:01] Platform Linux -- Python 3.4.2, coalib 0.12.0.dev20170507091731
     [DEBUG][22:40:01] The file cache was successfully flushed.
