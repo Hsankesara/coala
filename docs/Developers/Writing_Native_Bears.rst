@@ -66,7 +66,22 @@ In order to let coala execute this bear you need to let coala know where
 to find it. We can do that with the ``-d`` (``--bear-dirs``) argument:
 
 ``coala -f src/*.c -d bears -b HelloWorldBear -L DEBUG --flush-cache``
+After exicuting above command following output would appears :
+.. Output:: python
 
+    [WARNING][22:28:38] 'cli' is an internally reserved section name.
+    It may have been generated into your coafile while running coala with `--save`.
+    The settings in that section will inherit implicitly to all sections as defaults just like CLI args do.
+    Please change the name of that section in your coafile to avoid any unexpected behavior.
+    [DEBUG][22:28:38] Platform Linux -- Python 3.4.2, coalib 0.12.0.dev20170507091731
+    [DEBUG][22:28:38] The file cache was successfully flushed.
+    Executing section cli...
+    [DEBUG][22:28:38] Files that will be checked:
+    /home/USER_NAME/Git/coala-tutorial/src/main.c
+    [DEBUG][22:28:38] coala is run only on changed files, bears' log messages from previous runs may not appear.
+    You may use the `--flush-cache` flag to see them.
+    [DEBUG][22:28:38] Running bear HelloWorldBear...
+    [DEBUG][22:28:38] Hello World! Checking file /home/USER_NAME/Git/coala-tutorial/src/main.c .
 .. note::
 
     The given bear directories must not have any glob expressions in them. Any
@@ -125,7 +140,27 @@ Try executing it:
 
 Hey, we'll get asked for the user\_input! Wasn't that easy? Go ahead,
 enter something and observe the output.
+After doing that you'll see an interective output:
+.. Output :: python
 
+    [DEBUG][22:40:01] Platform Linux -- Python 3.4.2, coalib 0.12.0.dev20170507091731
+    [DEBUG][22:40:01] The file cache was successfully flushed.
+    Executing section cli...
+    [DEBUG][22:40:01] Files that will be checked:
+    /home/heet/Git/coala-tutorial/src/main.c
+    [DEBUG][22:40:01] coala is run only on changed files, bears' log messages from previous runs may not appear.
+    You may use the `--flush-cache` flag to see them.
+    [DEBUG][22:40:01] Running bear CommunicationBear...
+    [DEBUG][22:40:01] Got '1' as user input of type <class 'str'>.
+
+    src/main.c
+    |    | [NORMAL] CommunicationBear:
+    |    | A hello world result.
+    |    | *0: Do nothing
+    |    |  1: Open file(s)
+    |    |  2: Add ignore comment
+    |    | Enter number (Ctrl-D to exit):
+Here you can select option according to you requirement.
 So, what did coala do here?
 
 First, coala looked at the parameters of the run method and found that
